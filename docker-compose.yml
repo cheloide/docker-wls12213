@@ -2,9 +2,8 @@ version: "3"
 
 services:
   admin-server:
-    image: docker/wls12213-admin
     build:
-      context: ./docker-images/admin-server
+      context: ./docker-build
     ports:
       - 7001:7001
     networks: 
@@ -13,10 +12,11 @@ services:
       - DNS_NAME=wls-admin
       - CLUSTER_NAME=Cluster_MS
       - PRODUCTION_MODE=false
+      - IS_NODE_SERVER=false
     container_name:  wls-admin
   ms01:
-    image: docker/wls12213-node
-    build: ./docker-images/node-server      
+    build:
+      context: ./docker-build
     ports:
       - 7002:7002
     networks: 
@@ -28,6 +28,7 @@ services:
       - NODE_LISTEN_PORT=7002
       - NODE_MANAGER_PORT=5556
       - PRODUCTION_MODE=false
+      - IS_NODE_SERVER=true
     container_name:  wls-ms01
 networks:
   cluster_network:
