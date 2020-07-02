@@ -46,9 +46,9 @@ mv /assets/adminserver.py $ORACLE_HOME/adminserver.py
 mv /assets/nodeserver.py $ORACLE_HOME/nodeserver.py
 mv /assets/start-admin-server.sh $ORACLE_HOME/start-admin-server.sh
 mv /assets/start-node-server.sh $ORACLE_HOME/start-node-server.sh
-mv /assets/start-wsl.sh $ORACLE_HOME/start-wsl.sh
+mv /assets/start-wls.sh $ORACLE_HOME/start-wls.sh
 
-chmod +x $ORACLE_HOME/start-wsl.sh
+chmod +x $ORACLE_HOME/start-wls.sh
 chmod +x $ORACLE_HOME/start-node-server.sh
 chmod +x $ORACLE_HOME/start-admin-server.sh
 
